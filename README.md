@@ -8,7 +8,7 @@ Testing HTML strings in Crystal isn't easy. It's possible to use `Regex` or `Lex
 
 ### What HTML Test Utils isn't
 
-HTML Test Utils is not a testing framework. It still needs to be used with an existing framework, like [Minitest.cr](https://github.com/ysbaddaden/minitest.cr) or Crystal buit-in [spec](https://crystal-lang.org/reference/1.8/guides/testing.html) library. What it is, is objects and methods that make it easy to test your HTML string.
+HTML Test Utils is not a testing framework. It still needs to be used with an existing framework, like [Minitest.cr](https://github.com/ysbaddaden/minitest.cr) or Crystal's buit-in [spec](https://crystal-lang.org/reference/1.8/guides/testing.html) library. What it is, is objects and methods that make it easy to test your HTML string.
 
 ## Installation
 

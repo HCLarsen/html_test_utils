@@ -45,7 +45,7 @@ title.text          #=> "Lorum Ipsum"
 When multiple elements are needed, a convenient `#findAll` method can be used to return an `Array` of `Wrapper` objects.
 
 ```crystal
-list_items = wrapper.findAll("li")
+list_items = wrapper.find_all("li")
 list_items.size     #=> 3
 list_items[0].text  #=> "Lorem ipsum dolor sit amet,"
 

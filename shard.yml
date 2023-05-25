@@ -1,6 +1,15 @@
 name: html_test_utils
 version: 0.1.0
 
+dependencies:
+  lexbor:
+    github: kostya/lexbor
+
+development_dependencies:
+  minitest:
+    github: ysbaddaden/minitest.cr
+    version: "1.0.1"
+
 authors:
   - Chris Larsen <clarsendev@protonmail.com>
 

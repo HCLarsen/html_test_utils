@@ -42,7 +42,7 @@ title.exists?       #=> true
 title.text          #=> "Lorum Ipsum"
 ```
 
-When multiple elements are needed, a convenient `#findAll` method can be used to return an `Array` of `Wrapper` objects.
+When multiple elements are needed, a convenient `#find_all` method can be used to return an `Array` of `Wrapper` objects.
 
 ```crystal
 list_items = wrapper.find_all("li")

@@ -41,16 +41,6 @@ class WrapperTest < Minitest::Test
     refute emptywrapper.exists?
   end
 
-  def test_raises_on_find_for_empty_wrapper
-    wrapper = HTMLTestUtils::Wrapper.new(nil)
-
-    error = assert_raises do
-      wrapper.find(".noclass")
-    end
-
-    assert_equal "Error: cannot call find on empty wrapper", error.message
-  end
-
   def test_finds_multiple_elements
     wrapper = HTMLTestUtils::Wrapper.new(node)
 
@@ -119,5 +109,57 @@ class WrapperTest < Minitest::Test
 
     assert_equal "main", days.attribute_by("role")
     assert_equal "color:red", days.attribute_by("style")
+  end
+
+  def test_raises_on_methods_for_empty_wrapper
+    wrapper = HTMLTestUtils::Wrapper.new(nil)
+
+    error = assert_raises do
+      wrapper.find(".noclass")
+    end
+
+    assert_equal "Error: cannot call find on empty wrapper", error.message
+
+    error = assert_raises do
+      wrapper.find_all(".noclass")
+    end
+
+    assert_equal "Error: cannot call find_all on empty wrapper", error.message
+
+    error = assert_raises do
+      wrapper.text
+    end
+
+    assert_equal "Error: cannot call text on empty wrapper", error.message
+
+    error = assert_raises do
+      wrapper.classes
+    end
+
+    assert_equal "Error: cannot call classes on empty wrapper", error.message
+
+    error = assert_raises do
+      wrapper.id
+    end
+
+    assert_equal "Error: cannot call id on empty wrapper", error.message
+
+    error = assert_raises do
+      wrapper.tag
+    end
+
+    assert_equal "Error: cannot call tag on empty wrapper", error.message
+
+    error = assert_raises do
+      wrapper.attributes
+    end
+
+    assert_equal "Error: cannot call attributes on empty wrapper", error.message
+
+    error = assert_raises do
+      wrapper.attribute_by("style")
+    end
+
+    assert_equal "Error: cannot call attribute_by on empty wrapper", error.message
   end
 end

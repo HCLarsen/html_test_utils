@@ -8,9 +8,10 @@ class WrapperTest < Minitest::Test
   def node
     return @node if @node
 
-    weather = File.open("#{__DIR__}/files/weekly_weather.html")
+    weather = File.read("#{__DIR__}/files/weekly_weather.html")
     lexbor = Lexbor::Parser.new(weather)
-    @node = lexbor.document
+
+    @node = lexbor.root!
   end
 
   def test_initializes_wrapper
